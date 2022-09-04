@@ -1,0 +1,98 @@
+.form-login {
+    padding: 40px 0px 20px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    font-size: 2rem;
+    font-weight: 500;
+
+    h1 {
+        font-size: 3rem;
+        font-weight: 550;
+    }
+    
+    form {
+        padding: 10px 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        label {
+            margin-top: 30px;
+            font-size: 2rem;
+        }
+
+        .ant-form-item-control-input {
+            width: 500px;
+
+            input {
+                padding: 15px;
+                outline: none;
+                border-radius: 5px;
+                margin-top: 5px;
+                font-size: 2rem;
+            }
+
+        }
+
+        button {
+            font-size: 2rem;
+            border-radius: 5px;
+            margin-top: 15px;
+            width: 500px;
+            padding: 15px;
+            background: var(--color-header);
+            color: var(--color-white);
+            border: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-google {
+            background: #ea4335;
+            color: var(--color-white);
+        }
+        .btn-facebook {
+            background: #3b5998;
+            color: var(--color-white);
+        }
+    }
+}
+
+.bg-form{
+    position: absolute;
+    background: url(https://www.pepsi.com/en-us/uploads/images/twil-bg.jpg);
+    height: 100%;
+    width: 50%;
+    z-index: 2;
+    transform: translateX(100%);
+    overflow: hidden;
+    transition: 0.5s ease-in-out;
+    img{
+        margin-top: 40px;
+    }
+}
+
+.container-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h2{
+        color: gray;
+        display: flex;
+        gap: 10px;
+        p{
+            color: var(--color-black);
+            cursor: pointer;
+        }
+        p:hover{
+            color: var(--color-header);
+        }
+    }
+}

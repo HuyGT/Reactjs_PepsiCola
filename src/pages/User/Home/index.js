@@ -4,6 +4,7 @@ import "./style.scss";
 import pepsi1 from "../../../assets/pepsi001.png";
 import pepsi2 from "../../../assets/pepsi002.png";
 import pepsi3 from "../../../assets/pepsi003.png";
+import Carousels from "./Carousel";
 
 export default function Home() {
   const pepsi = useRef("");
@@ -16,8 +17,7 @@ export default function Home() {
         "background-image: url(https://www.pepsi.com/en-us/uploads/images/nitro/Desktop_Background.png);";
     } else if (value === pepsi2) {
       pepsi.current.src = pepsi2;
-      bgSection2.current.style =
-        "background: #e74c3c";
+      bgSection2.current.style = "background: #e74c3c";
     } else {
       pepsi.current.src = pepsi3;
       bgSection2.current.style =
@@ -64,6 +64,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <Carousels />
     </>
   );
 }

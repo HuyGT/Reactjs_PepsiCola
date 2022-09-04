@@ -4,6 +4,7 @@ import { ROUTER_PATH } from "./routerLink";
 //user
 const Home = lazy(() => import("../pages/User/Home"));
 const Shop = lazy(() => import("../pages/User/Shop"));
+const Login = lazy(() => import("../pages/User/Login"));
 
 
 //admin
@@ -20,6 +21,11 @@ export const userRouter = [
     path: ROUTER_PATH.SHOP.path,
     isExact: true,
     component: Shop,
+  },
+  {
+    path: ROUTER_PATH.LOGIN.path,
+    isExact: true,
+    component: Login,
   },
 ];
 

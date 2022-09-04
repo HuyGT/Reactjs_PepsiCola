@@ -22,7 +22,9 @@ export default function HeaderUser() {
         <li>WHAT'S NEW</li>
         <li>CONTACT</li>
       </ul>
-      <button>Login</button>
+      <Link to={ROUTER_PATH.LOGIN.path}>
+        <button>Login </button>
+      </Link>
     </header>
   );
 }
