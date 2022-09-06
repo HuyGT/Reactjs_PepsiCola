@@ -1,7 +1,7 @@
 import axiosClient from "../utils/axiosClient";
 
-export const getUsers = async () => {
-  const { data } = await axiosClient.get("users");
+export const getUsers = async (params) => {
+  const { data } = await axiosClient.get("users", { params: params });
   return data;
 };
 export const getUserById = async (id) => {

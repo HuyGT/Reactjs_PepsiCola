@@ -9,7 +9,6 @@ import Carousels from "./Carousel";
 export default function Home() {
   const pepsi = useRef("");
   const bgSection2 = useRef("");
-
   const handleChangeImage = (value) => {
     if (value === pepsi1) {
       pepsi.current.src = pepsi1;

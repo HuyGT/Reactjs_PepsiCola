@@ -1,0 +1,45 @@
+.sb-admin {
+    max-width: 200px;
+    min-width: 200px;
+    display: flex;
+    direction: ltr;
+    background: red;
+    flex-direction: column;
+    background: var(--color-white);
+    transition: 0.5s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    .logo {
+        padding: 15px;
+
+        img {
+            width: 100%;
+            height: 120px;
+        }
+    }
+
+    ul {
+        margin-top: 15px;
+        list-style: none;
+        padding-left: 0;
+
+        li {
+            padding: 10px 0px 10px 20px;
+
+            margin: 10px 0px;
+            display: flex;
+            align-items: center;
+            font-size: 2rem;
+            color: var(--color-black);
+            gap: 10px;
+            font-weight: 500;
+        }
+
+        li:hover {
+            background: #3498db;
+            color: var(--color-white);
+
+        }
+    }
+
+}

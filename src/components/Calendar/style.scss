@@ -1,0 +1,61 @@
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+td {
+    padding: 0;
+}
+
+
+.calendar-title {
+    border-radius: 1em 1em 0 0;
+    background: #e66b6b;
+    color: #fff;
+    padding: 3em 2em;
+}
+
+
+.day {
+    font-size: 8em;
+    font-weight: 900;
+    line-height: 1em;
+}
+
+.month {
+    font-size: 4em;
+    line-height: 1em;
+}
+
+.calendar {
+    background: #fff;
+    border-radius: 0 0 1em 1em;
+    color: #555;
+
+    thead {
+        color: #e66b6b;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    td {
+        padding: .5em .8em;
+        text-align: center;
+    }
+
+    tbody {
+        td:hover {
+            background: #cacaca;
+            color: #fff;
+        }
+    }
+}
+
+.current-day {
+    color: #e66b6b;
+}
+
+.prev-month,
+.next-month {
+    color: #cacaca;
+}

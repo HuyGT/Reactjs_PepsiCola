@@ -15,6 +15,32 @@ function* fetchUsers(action) {
   }
 }
 
+function* fetchLogin(action) {
+  yield put(actSetLoading());
+  try {
+    const user = yield call(getUsers,{email: action.payload.email});
+    yield put({
+      type: UserTypes.LOGIN_SUCCESS,
+      payload: user[0],
+    });
+  } catch (e) {
+    yield put({ message: e.message });
+  }
+}
+
+function* fetchUserByFilter(action) {
+  yield put(actSetLoading());
+  try {
+    const user = yield call(getUsers, {...action.payload});
+    yield put({
+      type: UserTypes.GET_USER_SUCCESS,
+      payload: user,
+    });
+  } catch (e) {
+    yield put({ message: e.message });
+  }
+}
+
 function* fetchUserById(action) {
   yield put(actSetLoading());
   try {
@@ -42,6 +68,14 @@ function* watchAllUser() {
   yield takeLeading(UserTypes.GET_All_USER, fetchUsers);
 }
 
+function* watchLogin() {
+  yield takeLeading(UserTypes.LOGIN, fetchLogin);
+}
+
+function* watchUserByFilter() {
+  yield takeLeading(UserTypes.GET_USER_BY_FILTER, fetchUserByFilter);
+}
+
 function* watchCreateUser() {
   yield takeLatest(UserTypes.ADD_USER, createUser);
 }
@@ -51,4 +85,10 @@ function* watchDetailUser() {
 }
 
 // eslint-disable-next-line import/no-anonymous-default-export
-export default [watchAllUser(), watchCreateUser(), watchDetailUser()];
+export default [
+  watchAllUser(),
+  watchCreateUser(),
+  watchDetailUser(),
+  watchUserByFilter(),
+  watchLogin(),
+];

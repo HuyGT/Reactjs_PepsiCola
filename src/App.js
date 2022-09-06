@@ -1,13 +1,14 @@
-import { Suspense } from 'react';
+import { Suspense } from "react";
 import { Route, Switch } from "react-router-dom";
 import { adminRouter, userRouter } from "./common/router";
 import AdminLayout from "./layouts/AdminLayout";
 import UserLayout from "./layouts/UserLayout";
+import Loading from "./components/Loading";
 
 function App() {
   return (
     <div className="App">
-      <Suspense >
+      <Suspense fallback={<Loading />}>
         <Switch>
           {userRouter.map((page, index) => {
             const Component = page.component;

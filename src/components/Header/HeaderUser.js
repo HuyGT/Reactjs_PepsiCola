@@ -4,8 +4,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./style.scss";
 import { ROUTER_PATH } from "../../common/routerLink";
+import ProfileDropdown from "../Dropdown/ProfileDropdown";
 
 export default function HeaderUser() {
+  const userLocal = localStorage.getItem("Account") || null;
+  const role = JSON.parse(localStorage.getItem("Account"))?.role
   return (
     <header>
       <img
@@ -19,12 +22,20 @@ export default function HeaderUser() {
         <Link to={ROUTER_PATH.SHOP.path}>
           <li>SHOP</li>
         </Link>
-        <li>WHAT'S NEW</li>
         <li>CONTACT</li>
+        {role === "admin" && (
+          <Link to={ROUTER_PATH.ADMIN.path}>
+            <li>ADMIN</li>
+          </Link>
+        )}
       </ul>
-      <Link to={ROUTER_PATH.LOGIN.path}>
-        <button>Login </button>
-      </Link>
+      {userLocal === null ? (
+        <Link to={ROUTER_PATH.LOGIN.path}>
+          <button>Login </button>
+        </Link>
+      ) : (
+        <ProfileDropdown />
+      )}
     </header>
   );
 }

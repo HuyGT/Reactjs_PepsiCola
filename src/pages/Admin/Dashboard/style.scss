@@ -1,0 +1,36 @@
+.world-map {
+    display: flex;
+    svg {
+      /* stroke: #fff; */
+  
+      // All layers are just path elements
+      path {
+        fill: #e4e4e4;
+        cursor: pointer;
+        outline: none;
+  
+        // When a layer is hovered
+        &:hover {
+          fill: #4ba6d6;
+        }
+  
+        // When a layer is focused.
+        &:focus {
+          fill: #4ba6d6;
+        }
+  
+        // When a layer is 'checked' (via checkedLayers prop).
+        &[aria-checked="true"] {
+          fill: #3B7DDD;
+        }
+  
+        // When a layer is 'selected' (via currentLayers prop).
+        &[aria-current="true"] {
+          fill: rgba(56, 43, 168, 0.83);
+        }
+      }
+    }
+    .map{
+        padding: 10px;
+    }
+  }

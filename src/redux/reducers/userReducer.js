@@ -18,6 +18,14 @@ const userReducer = (state = initialValue, action) => {
     case UserTypes.ADD_USER_SUCCESS: {
       return { isLoading: false };
     }
+    case UserTypes.LOGIN_SUCCESS: {
+      localStorage.setItem("Account", JSON.stringify(action.payload));
+      return { isLoading: false };
+    }
+    case UserTypes.LOGOUT: {
+      localStorage.removeItem("Account");
+      return { isLoading: false };
+    }
     case UserTypes.SET_LOADING: {
       return { ...state, isLoading: true };
     }

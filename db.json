@@ -1,3 +1,146 @@
 {
-  "users": []
+  "users": [
+    {
+      "email": "admin@gmail.com",
+      "password": "1",
+      "confirmPassword": "1",
+      "role": "admin",
+      "id": 1
+    },
+    {
+      "email": "nquanghuy112@gmail.com",
+      "password": "1",
+      "role": "user",
+      "id": 2
+    },
+    {
+      "email": "123@gmail.com",
+      "password": "123",
+      "role": "user",
+      "id": 5
+    },
+    {
+      "email": "huygt@gmail.com",
+      "password": "123",
+      "confirmPassword": "123",
+      "role": "user",
+      "id": 6
+    }
+  ],
+  "brands": [
+    {
+      "brandName": "Pepsi",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Pepsi_logo_2014.svg/1200px-Pepsi_logo_2014.svg.png",
+      "dateAdd": 1662373617195,
+      "id": 1
+    },
+    {
+      "brandName": "Coca-Cola",
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUMAAACcCAMAAADS8jl7AAAAkFBMVEX////0AAn0AADzAAD0AAX//Pz/+fn80dL5lpf94uP8ycr7vb73XmD93+D6qqv6pqf919j+8/P7trf4d3n+7e38xMX2WFr3Z2n4fX/2QUT7s7T5lJX5jI33ZWf1LTD2UVP3bW/6oKH4g4X1OTz1Oz71KCv0Exj2Skz1HyP1MjX7r7D5m5z2R0n5jY71HCD2WlwltdIbAAATm0lEQVR4nO1d15bqurKFkg2YbHLO0MRe//93V7FUkk2H05hzxh2aD7sXGLBdqjAryLtUCggICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgI+K8jrba3i8V2+F+8gla3O3DeGfB3kvSPPxsPvv/MKzCcHBkDAQaN95zSRbIdAROAZV28ToeP9YkpwMe8+oOfSBvzRztH4P0XX2ouun0uOShrAJu/46QU6XbFL4DJ00fAmul1LVdUX1Ekji2Sr3+j2hRfYazrH9hn3nk9GhcGkRYfSGGy99pzd2xWUMiAQZmuKK4sF23r+W8kH/x7/ENlaLoHKsdJsVfP0TsxMKvNjrtZY3sCOBd+WovqnaEA19t60l2BWk0AT5LA/j3TxZ2UILv0AabOgQROhd/AykoQdmqdKwzYFyv+WrTW+gL4+WvC9w+mUoT3Raez3R0YA1eKk0rej5yV2LkjP8CaHmmwom8lXeIlAlvg1U3gXcacbswFcCcci3c60i9GLNYfuE49KUI78ysd+RG2FjfANYEcmTDWKfYOrtZpsxGJ/zzCvCc0dwAl2JTxNP7HbWCdTKghtJaOFBlbeTFiLGMRe4h/VxlZ/tYRYFPoDaQfLMLF7dkTbyc8qPyESvwVyYVhKFNrlggX2JCGQC0wcaUIbEwITHoBqQQz+Yovf2yOLJjvHF+NoXXYbGqvqS9CYgSFnlrhhoJhTeVGGlwJ/4l/ckm4tLi7x/VWUqyZIwkoVyg5pXDlG31geOIx+hyXCsTOLi0jHqQp7QKKZ6XpnaFAtIercRHe5L/2AH7oaDsxOoKyspyqFqE27xpoeiiDPZz+muF8eQd7Ztd0Zt/vqLfZN3T277BWACdtthMuQqVNMcAqe8lrTxVP/MNDpkSorzdmbC/+1hVZ/CxShF2SlAD10Or94tVwgfJga21uPEKDlmaVQR4vnjmqCB9xaSZ/BkVY2t23aSntnJVk93k06FXoWTuGMlW5rrLkjCG9GPEarYAZYQk/bC7l8YRbpSNmzYfTwLa+XBJ/0l5T5zismfcTr0LNGgWcHXWvK5ZQL/LsnEV/Wkpl2NuCiLB0BngSC3pIhj6M44k4h6ikHEm93T8aTl5wzt/HteQew9W4FhNnvxZ5dupIrLr1WGRrBVX2nNVVxspOD0YLxYqnwFSibX8ZCiVnTSLCo2+0G8bOBVPDBkmNjNgSLkJrvRv4ip6K7BQuPEHQIuyVKievQMEJZKGcZm3PB+es30uKjshtQuzRj50J4SsNGOy//ImrMJ+eFiEnQxe/MnEu1hlREZaLDP1PsLVBwfq/HcDIfqT/bbYeDzipUSLkDOLDq0pAwRkyFSG8qUJOccsTYYtRJsDV8PsEraq0WQTnDRFhBKxcsARL/4CcLr8mVO3cnnZU4uq108iXfNL7SR8mV4SlKVAmsP7SG+qzKZ8Kn3FpzvCGuAqOC6YUImLYJcslMKJgIkvZvZyDdV1rv2dcZno78UOiD9Od1yQWyk3c9CstdyvCiNQUeJBZ2t+afRGU8Xwq/kY8qe6pcCz+u98NC40kEgsqwmwVThbzIu1UZv7B1t1W+rza01ZzCs6KVrqttZEHevqVroq2iQiJqq2AWcc8gO8ZfnwGVIPKoNq4btuN6qB4+ZXoLZD0gKCjDURIJENyd1ivF9UQeiQ5at8kv6bNSoohNuqiRNSw56flyTqDh311+UHp8q5FSFh0d7h9R4CsEhEKlu8hvavck417s6PflRqsmFbBw2TtVhfbWvJsP5liLUspeV/fa0efH7MjtiW/3aRq2PxB0XSsV5PU/DvsLa3IAdiqB5Qz5lLV5jgVrqsCEdyyBzknF8KrAWEPEy1cycyNJ7jIQ119SJVgElKupEZQYaTCMWFw/O5GdBChJs8Tm9EX33gZzoQCZNs0V61NY/WyD1DLHDR1Rn7FqEcjTdNG6oD+eeUvj0BekVzCNYIhs9GNO4xvCZfxCMQWeIg5vcMbLqkIM/FEVyGQmHWA6KFe+IjJYJ30CAfW1suU6LXQtF5tdUCZ0E+Kw+79zq1CTVj0La1JtEdgrg8tvN5Zwtqquomlf3Rn1tYowZYEZmOtMouP/4nCiHFgOsnShtQxYwpSJunnZc9x2UuJ9VGEkXe/G+z/Np2kOR8V41UO9r3mezpoCRVhpq5kRGgnBPqWv4yNCOUbUmrG+ej4qN1fRXvDvLLPlYRkj3putB62zvCDjuyHCfzW5HeM6mRxOFJL9s3lgY2Njv28aUrp5FBXppS09S+MDNtRWqlVLa9e0CIFS79EziMUf6slSrDw7VyMYbhkndosa1dFgJJrp4UtYM0cZchTVqWSFVMSURoyUHVjRSo2bgRpmZfZFDIuW2eYCbvcRNSQD1t/y/BM0CJRePhdkedF6FIRfnoHh6iF9tJu2h22DB/RUWirOrnSjoz2mgB1cAKKgyZxhtmw25axh62+T7crSOFR2pwjnApuXCisvrDkBNvkY8udT8pHdTC704JZADq0nlGJjTrUy7I2A5If5WWYpeQx3tR+Mt5mKibWpfJFfk/1aUvV0FOT2NA2buJ7zqwlVWtI2tuaongv+tN1YXJSDMZyzSGd1uUFlIQ4wz8x4Zk5JyYonLe/Z7gqJW1Z5sfkkREhT4HTMkRs3BUdcpZUm1iyJwY4XPblNVur0od2WcphsCdt2L/ktKmO+9aSB9EPymQvAa1R+uUYLEZJ0lZZCz2DqZzks9/KMcCpE2osd8rRijmx5D/ROFM+xlbgAKDoDqRGi1ry/skxPaJRahxVbywi05M5uoWE0sR4LdOczjo5vT+g+jugAzaXk57eNZ1GS9eZgGJyaFJ8rwu1ZXDfHrAIk9Etk7LiQIfpD+V0hW08i/5kyRXwVP2NInR4jacID8eS8WJl0or6kyUrA+NgzddifX/Zwi2pXOfmLz/HxsY+dRHvE6Grhm6migkg0NrbSM1e3XHCOKM9RrWwCmgylGwraUAs2Tsad6vP+UwyvNYdkoTsWudPwhcSESbdAsOzkyhv3GPGSQMdNuS8RlhoHeVbK3kw5QN0rl3Pytpz3AUxIpGJ3mU8W8ttJ5kfFxg81LaUBXnPJKsMZz2tCIdj0U4RPeXBsC7ReCnt7j9XQxQTNTJOWmTudkH5+i5uxnyhrNyA0mOmf2JzIC/c3HTYj3TfhaIyYaaFYL2Iobhwly+7pDwxPKomkEitDnpL0P0XEvoWFcINfW9oTNLZe7BRI+E2Aby5X7LlAxTKzWQosf6AzVVOJKDYtaiX1fRWFOXQnZ6eyRR/cNENNdTrxqm+iY4VQmNhYpT1palLh6qh635QTJT+iVkY8XeF3tBTQ0OuTZWQUMOevl1bNiMJEqPdA92AEfP/vpdsSvHyhbxyT4M1EHQfUjNnDCeSsEkhNwWZTy1KrwTJlH1uOM0RU8odi7g6bF9lLgeTDlTQvRtQLoChpmI7OFbX44NW28swFuvI6CIlJ1XUkG6yibskDEdQ8W1uZz1NkwKia1rZ5Ln3v4NGFK/2mctdpqAsFL2oX2PHCgxeaI05n/wHtpq3gOzJK6Y1rDzBxsl366BEqJSsy4wMzXLLECRm57StYumoKRai7YadV6FGR0PcQzsUk02XuJWpyhju3vNSFDu5aNTQxGR9u33Sl6uQgIIN6ZXT3eK+hniYGXMmSFPTdx4SXpNeAFaabWEHQxqLqXrASwOKa8peGpbxa9J9GZ9tvrR1vkNKuUx9C9sbyiGIYVakk3lquHYaMEJ3rAx1iQztImWaMJhsir+si42P+jiKUF2kUYoXt6cG1JTdiGJNGQfwOWnR4QXv3v3SgyiWvtG1Yz81Osya5w1rfpHxZvehtF2nIC5R/Zg5wDWcrxH2TrAtoBKExDWIl2FGbtrbPIkBG4txV1Y2hMzOK9CvcBHaLrtiZ1h7kPbDSQ7xRVtiAzq+YghHQsrZsT29d6E8/Io/xkZ5NjVlgNvTTQfD9Ps/HIN4HQjB9pcHC2LGf82ZtbAy2jn5xoRFgGmHao7aypkQKRconQGh3FCrnQnhn+RDOpxbQoquc8xkdLI+nXPGs9FaLHs03dc5KfvfQEYb/EKb9ZQyCg7WzDrjir1q+4WR4LWYfEtGYiuD/GVlxMo0O8tJUfA+kSEMmCZPpPFnyE5FZXPEJZDExXweK+w5beeXILW3keHKwOyhW6Mv9mXds99D4tH6lJ1LG5Z3le6aSGk7F5vvadhqkvXTPtLkhHZlOrqImqK9AmpSR5nygqghyt6GMh3BzKde3hkgg16ZOS8ywBTJ5JV8IrWXrZ3lQ1RmW7SOxsk4+Ql+M5ErQrJ+xlsgRbHautfyNMyd1Tc4fqjiFhKkiH3YDM5MYJvVMcHz9fu7rsQd+pNlQEK2vBqaTJN28LSedB8ijRKkrOd8CbxfmDw7dy3/xmVqvRF/MZWbiB6Z2iLWUfvfjYJFNCM1TsRU33GQ4PX7ux7EnPzm7d6RQMSckEPsUA7pRpEaSmrTL/GcFegvuPMaZHZek5UkE3jFLmXhjLHKL2iWmIOFoXBwIsJhP42yLKwlGkqBjjav8/o3jMl9+JWMhSMOL5oNPSU1m2OJcomZdGqv3i/E5JCOwpoDk3JXqh69MXCLMoMV59HHA/eUSW9Md5YZZJxhKdJvXEovB9m3wfxjTiZ99Kn9lEqYsYM+Thws26fEqULZK0nTqKxV3Ixs73A5H2ptTMUcd/nsVF+MEZdLaQV26g1VxAylgD7pwbo1f0DE0uMy5ExNpaSrB2BLtPbpCw9yNzk7uxYZNyLl7zxEgJ9ERBQk11aLWk1QD7rBiyC7mTFtMR4cncT4l/L5CeywV14evjMT/HkFS1HaVIfLzkyx/s5SfWegXh2y608UWc8qCmWBE/3kRlbJkP/RPLfLYD1rtLCaTirtJgRHOMS9N04CA8oLUxUiw7zpsm7/smp2npV8u/3V6bTfedR8MP/3sWnjd9L56N88r7NEcmVdtvzkzM+5iqoq95KYbLFSabThUpTdIg0y9VnMs/Ube/ZKmyYyLHQ7dBaDjDvkAZa5RaATiHwlQTGR9uFNpy/G0ZFE1dAaTAlNm8Cw0NprJzrJoMtbRvQs6iT4KM9PJ9clOJkWDsaMidMtKjwDVNTbDdgCdjDD/FrTDSjcC7w0OluO9pZHrRAQMq6J3dbLwq5MzmXnquFUN+3qlDcqGNPKUEPtrWLwH+ryR0yIY3/LnCOinQkpfZc+tbgIb+QSqTe8mSFcdJUY1mzxXTvhFB/3p04zevVDAEhT700jZga0dqhuzg2VgtbIolfWWoU16u9kIrYtHJsqnSnG6axvzl5NcGjNIXeg4NeIf8gasjJ0weOufB+zPDulnUaga2NVP3zYWp5RCeSKKn9ssNc/c5AwjD/89qA6u/WbBwD9WNH98tH7psREksI898QzExUTRtmIssfG4NyPylhSNg4Sky0l0xZ7sTMUINOb/9GwY6Xa6d/18zroY0VF4avZ/uJy6Q7R7InFpknJc7CwZUsia8CahEmzTE5nA5XpLeDon/Sfg5/sb/k1qDH/9vlr3fZGPWOXPh/KQmxavz9133RwM8PWhBaqOp8dtTB6vQTcX1/xfCUZ69YO0tAaNdA8KIPHQF8D8sCNX9SF4vr8A8izYp6Bf+aRH+9p2cZrhqVH+8TWhx9m12A37GHBV9knSeF1i2LiDGMIERbyhC3CdX8YmtPh4iLUL1/7fETPnmZES0aOcohRhkxU1SXi1icXITYGeyhgIcOUPMJGsV0UoVRL/rtFbb8l1dTvt2Smjd2eydkfXW/QFYYvxQjlPB/kzErZ88aicWNL5vjIqjK00y4/FpGBljkKmFtQt0ytgl3jFu3mpIM+iwp7WmQFqBD9OTiCQWO3UjLjIeT0MV7UOrPGcNauTdZ5z1mmQmTLrEGTORF73vQmy4KWTtNd6WI7akRHZXZWwDvx6OfRjhizc03S7YiOXkFPI2jRh4CyY+44T7ezOemHc8Cy1mj5JHAwa34pRlm797AD5wPLeWexZmJWjj7i1vMY7k4JR2SCziydS4AjWSXZFO1clpdiUokqFSJfvt2QrFYy3G6M+sG6Vn+6kJWtJ8RI27vaOp4dZ42dz0eGHLlbQ922FrgP3HG7FRfHLwnCm1Ifw9al62T+6FyK2QuenNy74SKbrpfL5voQMfR44/a3jdk5eWYil/h+NB6vp0fpNMUt+RdfZdmwxGXt6LjzkCl2cFeQbHnmzCx2VZvd45jGSx6RL6VTemq8eNrGIN6wfB2SwYOVN+2fLV5yNB1IeKDE48GwJj1mZkhj5p2VS/DomRqZkwXm3z2pQarireXYTPpUS7mlf7iU4GMxKOwBot111p9J93fqz36j/LJ7lMNk42Gfq7QvhDq4gwDnzLOb7DgSO2U92RgP6hPaYQjp1s2WenaWK9qv3uOPSYFbVpLdSdst0pbRfPjrODYVzj0/x5utmM/P4h2YczLY5Ln7ljma+5yzqXLUU7PMXe15+ooHVJnUf6yMrWqNzea3d/Q7JL3F8rBaHfcf/cW1+p/l5vEp5+FCBsNjpoIcN3aj/X7d7zyLl+nuDOflM+XpNVfHTZ1++nKc3vDSq1wT122y3+D6hv/Hx99Rjb46Oiv2oej/X/C1+acFP0k2ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICDgfwn/B74D6fU3etXZAAAAAElFTkSuQmCC",
+      "dateAdd": 1662373638566,
+      "id": 2
+    },
+    {
+      "brandName": "7 Up",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/7-up_Logo.svg/1200px-7-up_Logo.svg.png",
+      "dateAdd": 1662373696631,
+      "id": 3
+    },
+    {
+      "brandName": "Monster",
+      "image": "https://marvel-b1-cdn.bc0a.com/f00000000104050/www.monsterenergy.com/media/uploads_image/2019/07/26/auto/400/d7c314143b129f1c87b59009982332ed.png?mod=v1_8a8c9a566ab3bf3ce06d1fe3de441ed1",
+      "dateAdd": 1662373745465,
+      "id": 4
+    }
+  ],
+  "products": [
+    {
+      "productName": "Pepsi Zero Sugar",
+      "price": "0.5",
+      "quantity": 100000,
+      "brandId": 1,
+      "description": "Pepsi Zero Sugar",
+      "image": "https://www.pepsi.com/en-us/uploads/images/can-pepsi-zero-sugar.png",
+      "sold": 0,
+      "dateAdd": 1662377128994,
+      "id": 1
+    },
+    {
+      "productName": "Pepsi Mango",
+      "price": "1.99",
+      "quantity": 10000000,
+      "brandId": 1,
+      "description": "Pepsi Mango",
+      "image": "https://www.pepsi.com/en-us/uploads/images/can-pepsi-mango.png",
+      "sold": 0,
+      "dateAdd": 1662377461925,
+      "id": 2
+    },
+    {
+      "productName": "Pepsi Cherry",
+      "price": "0.99",
+      "quantity": 5123,
+      "brandId": 1,
+      "description": "Pepsi Cherry Pepsi Cherry",
+      "image": "https://www.pepsi.com/en-us/uploads/images/can-pepsi-cherry-v2.png",
+      "sold": 0,
+      "dateAdd": 1662377514893,
+      "id": 3
+    },
+    {
+      "productName": "Pepsi Caffein",
+      "price": "0.7",
+      "quantity": 123123,
+      "brandId": 1,
+      "description": "Pepsi Caffein Pepsi Caffein",
+      "image": "https://www.pepsi.com/en-us/uploads/images/Diet-Pepsi-CaffFree-v2_12oz.png?mtime=20180215173733",
+      "sold": 0,
+      "dateAdd": 1662377553701,
+      "id": 4
+    },
+    {
+      "productName": "Coca-Cola Origin",
+      "price": "0.8",
+      "quantity": 46324,
+      "brandId": 2,
+      "description": "Coca-Cola Origin",
+      "image": "https://itseovn.com/attachments/lon-cocacola-moi-2016-2017-png.16580/",
+      "sold": 0,
+      "dateAdd": 1662377595978,
+      "id": 5
+    },
+    {
+      "productName": "7 Up Lemon",
+      "price": "1.2",
+      "quantity": 123123,
+      "brandId": 3,
+      "description": "7 Up Up 7 Up Up",
+      "image": "https://www.pngkey.com/png/full/916-9161564_free-png-7up-png-images-transparent-7.png",
+      "sold": 0,
+      "dateAdd": 1662377717615,
+      "id": 6
+    },
+    {
+      "productName": "Monster Energy",
+      "price": "1.5",
+      "quantity": 123123,
+      "brandId": 4,
+      "description": "Monster Energy Monster Energy",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYBDKxM85qJeuK5fatgDi7klIRh_AzuirexGpONgpGWmnsB-ImKHbkvvYIUIuSymyzBpQ&usqp=CAU",
+      "sold": 0,
+      "dateAdd": 1662377876621,
+      "id": 7
+    },
+    {
+      "productName": "Pepsi-Cola",
+      "price": "2",
+      "quantity": 100000,
+      "brandId": 1,
+      "description": "Pepsi-Cola Pepsi-Cola",
+      "image": "https://www.pepsi.com/en-us/uploads/images/can-real-sugar-reg.png?mtime=20180110134758",
+      "sold": 0,
+      "dateAdd": 1662431814007,
+      "id": 8
+    }
+  ]
 }

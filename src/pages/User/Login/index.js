@@ -1,10 +1,14 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/alt-text */
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { useDispatch } from "react-redux";
+import { actGetAllUser } from "../../../redux/actions/userAction";
 import FormLogin from "./FormLogin";
 import FormRegister from "./FormRegister";
 
 export default function Login() {
   const [active, setActive] = useState(false);
+  const dispatch = useDispatch();
   const bg = useRef(null);
   const handleRedirectForm = (value) => {
     if (!value) {
@@ -15,6 +19,10 @@ export default function Login() {
       bg.current.style = "transform: translateX(100%);";
     }
   };
+
+  useEffect(() => {
+    dispatch(actGetAllUser());
+  }, []);
   return (
     <div>
       <main>

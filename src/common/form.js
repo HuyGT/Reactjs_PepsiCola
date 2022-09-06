@@ -25,10 +25,10 @@ export const rules = {
     },
   ],
 
-  ruleCat: [
+  ruleBrand: [
     {
       required: true,
-      message: "Please input category name!",
+      message: "Please input brand name!",
     },
   ],
   ruleProductName: [
