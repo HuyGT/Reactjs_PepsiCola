@@ -12,8 +12,12 @@ export default function DetailImage({ id, image }) {
   const handleRedirectProduct = (value, id) => {
     let idLeft = parseInt(id.id) - 1;
     let idRight = parseInt(id.id) + 1;
-    if (idLeft < 1) return (idLeft = 1);
-    if (idRight > maxLength) return (idRight = maxLength);
+    if (idLeft < 1) {
+      idLeft = maxLength;
+    }
+    if (idRight > maxLength) {
+      idRight = 1;
+    }
     if (value) {
       history.push(
         generatePath(ROUTER_PATH.DETAIL.path, {
