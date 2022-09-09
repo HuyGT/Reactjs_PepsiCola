@@ -9,8 +9,36 @@ import {
   UsergroupAddOutlined,
   UserOutlined,
 } from "@ant-design/icons";
+import { BsCashStack, BsPaypal } from "react-icons/bs";
+import { GrVisa } from "react-icons/gr";
 
 export const columnsAll = {
+  columnCart: [
+    {
+      title: "Image",
+      dataIndex: "image",
+      key: "image",
+      render: (image) => (
+        <img src={image} style={{ width: "50px", height: "80px" }}></img>
+      ),
+    },
+    {
+      title: "Product Name",
+      dataIndex: "productName",
+      key: "productName",
+    },
+    {
+      title: "Quantity",
+      dataIndex: "cartQuantity",
+      key: "cartQuantity",
+    },
+    {
+      title: "Price",
+      dataIndex: "price",
+      key: "price",
+      render: (_, record) => <div>${record.price}</div>,
+    },
+  ],
   columnBrand: [
     {
       title: "Id",
@@ -151,7 +179,7 @@ export const columnsAll = {
             color={color}
             key={role}
             className="d-flex justify-content-center align-items-center w-50 "
-            style={{fontSize: "2rem",fontWeight: "500",padding:"10px"}}
+            style={{ fontSize: "2rem", fontWeight: "500", padding: "10px" }}
           >
             {role?.toUpperCase()}
           </Tag>
@@ -168,9 +196,9 @@ export const columnsAll = {
     },
 
     {
-      title: "Full Name",
-      key: "fullName",
-      dataIndex: "fullName",
+      title: "Email",
+      key: "email",
+      dataIndex: "email",
     },
     {
       title: "Address",
@@ -182,7 +210,7 @@ export const columnsAll = {
       key: "status",
       dataIndex: "status",
       render: (status) => {
-        let color = "geekblue";
+        let color = "";
         let icon = "";
         if (status === Status.PROCESSING) {
           color = "processing";
@@ -199,32 +227,56 @@ export const columnsAll = {
         }
 
         return (
-          <Tag icon={icon} color={color} key={status}>
+          <Tag
+            icon={icon}
+            color={color}
+            key={status}
+            className="d-flex justify-content-center align-items-center gap-2"
+            style={{
+              fontSize: "1.8rem",
+              fontWeight: "500",
+              padding: "10px",
+              width: "200px",
+            }}
+          >
             {status}
           </Tag>
         );
       },
     },
+
     {
       title: "Payment",
       key: "payment",
       dataIndex: "payment",
       render: (payment) => {
         let color = "geekblue";
-
-        if (payment === PaymentTypes.MOMO) {
-          color = "magenta";
-        } else if (payment === PaymentTypes.PAYPAL) {
+        let icon = "";
+        if (payment === PaymentTypes.PAYPAL) {
           color = "blue";
+          icon = <BsPaypal />;
         } else if (payment === PaymentTypes.VISA) {
           color = "purple";
-        } else if (payment === PaymentTypes.BANK) {
+          icon = <GrVisa />;
+        } else if (payment === PaymentTypes.CASH) {
+          icon = <BsCashStack />;
           color = "green";
         }
 
         return (
-          <Tag color={color} key={payment}>
-            {payment}
+          <Tag
+            color={color}
+            key={payment}
+            icon={icon}
+            className="d-flex justify-content-center align-items-center gap-2"
+            style={{
+              fontSize: "1.8rem",
+              fontWeight: "500",
+              padding: "10px",
+              width: "150px",
+            }}
+          >
+            {payment?.toUpperCase()}
           </Tag>
         );
       },

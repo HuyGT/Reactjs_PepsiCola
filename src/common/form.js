@@ -18,6 +18,12 @@ export const layout = {
 };
 
 export const rules = {
+  rulePayment: [
+    {
+      required: true,
+      message: "Please choose payment method!",
+    },
+  ],
   rulePhone: [
     {
       required: true,

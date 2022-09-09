@@ -6,7 +6,12 @@ const Home = lazy(() => import("../pages/User/Home"));
 const Shop = lazy(() => import("../pages/User/Shop"));
 const Login = lazy(() => import("../pages/User/Login"));
 const Detail = lazy(() => import("../pages/User/Detail"));
-
+const Profile = lazy(() => import("../pages/User/Profile"));
+const ChangePassword = lazy(() =>
+  import("../pages/User/Profile/ChangePassword")
+);
+const Cart = lazy(() => import("../pages/User/Cart"));
+const OrderUser = lazy(() => import("../pages/User/OrderUser"));
 
 //admin
 const Admin = lazy(() => import("../pages/Admin/Dashboard"));
@@ -14,6 +19,7 @@ const Products = lazy(() => import("../pages/Admin/Products"));
 const Brands = lazy(() => import("../pages/Admin/Brands"));
 const Users = lazy(() => import("../pages/Admin/Users"));
 const Orders = lazy(() => import("../pages/Admin/Orders"));
+const DetailOrder = lazy(() => import("../pages/Admin/Orders/DetailOrder"));
 
 // user
 export const userRouter = [
@@ -36,6 +42,26 @@ export const userRouter = [
     path: ROUTER_PATH.DETAIL.path,
     isExact: true,
     component: Detail,
+  },
+  {
+    path: ROUTER_PATH.PROFILE.path,
+    isExact: true,
+    component: Profile,
+  },
+  {
+    path: ROUTER_PATH.CHANGE_PASSWORD.path,
+    isExact: true,
+    component: ChangePassword,
+  },
+  {
+    path: ROUTER_PATH.CART.path,
+    isExact: true,
+    component: Cart,
+  },
+  {
+    path: ROUTER_PATH.ORDER.path,
+    isExact: true,
+    component: OrderUser,
   },
 ];
 
@@ -65,5 +91,10 @@ export const adminRouter = [
     path: ROUTER_PATH.USERS.path,
     isExact: true,
     component: Users,
+  },
+  {
+    path: ROUTER_PATH.DETAIL_ORDER.path,
+    isExact: true,
+    component: DetailOrder,
   },
 ];

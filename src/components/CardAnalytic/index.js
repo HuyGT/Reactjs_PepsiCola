@@ -5,7 +5,7 @@ import { BsArrowDown, BsArrowUp } from "react-icons/bs";
 export default function CardAnalytic({ user, order, product, income }) {
   return (
     <div className="col-sm-6 col-lg-3">
-      <div className="card-style">
+      <div className="card-analytic">
         <div className="card-body">
           <div
             className={

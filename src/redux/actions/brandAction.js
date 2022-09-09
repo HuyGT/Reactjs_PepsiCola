@@ -10,6 +10,15 @@ export const actGetBrandSuccess = (payload) => ({
   payload: payload,
 });
 
+export const actGetBrandById = (payload) => ({
+  type: BrandTypes.GET_BRAND_BY_ID,
+  payload: payload,
+});
+
+export const actGetBrandByIdSuccess = (payload) => ({
+  type: BrandTypes.GET_BRAND_BY_ID_SUCCESS,
+  payload: payload,
+});
 
 export const actSetLoading = () => ({
   type: BrandTypes.SET_LOADING,

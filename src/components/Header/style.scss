@@ -48,22 +48,56 @@ header {
         }
     }
 
-    button {
-        background: none;
-        border: 2px solid var(--color-white);
-        color: var(--color-white);
-        cursor: pointer;
-        width: 100px;
-        height: 50px;
+    .header-end {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+
+        .shopping-cart {
+            position: relative;
+            cursor: pointer;
+            padding: 10px;
+
+            svg {
+                font-size: 3rem;
+            }
+
+            a {
+                color: var(--color-white);
+            }
+
+            .badge-cart {
+                font-size: 1.4rem;
+                text-align: center;
+                top: 0;
+                right: 0;
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                background: red;
+                border-radius: 50%;
+            }
+        }
+
+        button {
+            background: none;
+            border: 2px solid var(--color-white);
+            color: var(--color-white);
+            cursor: pointer;
+            width: 100px;
+            height: 50px;
+        }
+
+        button:hover {
+            color: var(--color-header);
+            background: var(--color-white);
+        }
     }
 
-    button:hover {
-        color: var(--color-header);
-        background: var(--color-white);
-    }
 }
 
-.header-admin{
+.header-admin {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -71,26 +105,31 @@ header {
     height: 100px;
     width: 100%;
     background: var(--color-white);
-    box-shadow: rgba(0, 0, 0, 0.35)  15px 0px 15px;
-    button{
+    box-shadow: rgba(0, 0, 0, 0.35) 15px 0px 15px;
+
+    button {
         border: none;
         padding: 10px;
         background: none;
         font-size: 2.5rem;
     }
-    .profile{
+
+    .profile {
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 20px;
-        .icon{
+
+        .icon {
             padding: 10px;
             position: relative;
             cursor: pointer;
-            svg{
+
+            svg {
                 font-size: 3rem;
             }
-            .badge{
+
+            .badge {
                 top: 0;
                 right: 0;
                 position: absolute;

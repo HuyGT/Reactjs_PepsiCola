@@ -29,11 +29,10 @@ export const ProductTypes = {
 
 export const BrandTypes = {
   GET_All_BRAND: "GET_All_BRAND",
+  GET_BRAND_BY_ID: "GET_BRAND_BY_ID",
 
   GET_BRAND_SUCCESS: "GET_BRAND_SUCCESS",
-  ADD_BRAND_SUCCESS: "ADD_BRAND_SUCCESS",
-  DELETE_BRAND_SUCCESS: "DELETE_BRAND_SUCCESS",
-  UPDATE_BRAND_SUCCESS: "UPDATE_BRAND_SUCCESS",
+  GET_BRAND_BY_ID_SUCCESS: "GET_BRAND_BY_ID_SUCCESS",
 
   SET_LOADING: "SET_LOADING",
 };
@@ -49,6 +48,13 @@ export const OrderTypes = {
   SET_LOADING: "SET_LOADING",
 };
 
+export const CartTypes = {
+  GET_CART: "GET_CART",
+  ADD_CART: "ADD_CART",
+  REMOVE_CART: "REMOVE_CART",
+  CLEAR_CART: "CLEAR_CART",
+};
+
 export const Status = {
   PROCESSING: "PROCESSING",
   SHIPPING: "SHIPPING",
@@ -57,8 +63,7 @@ export const Status = {
 };
 
 export const PaymentTypes = {
-  MOMO: "MOMO",
-  VISA: "VISA",
-  PAYPAL: "PAYPAL",
-  BANK: "BANK",
+  VISA: "visa",
+  PAYPAL: "paypal",
+  CASH: "cash",
 };

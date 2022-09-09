@@ -4,9 +4,12 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { actGetProductById } from "../../../redux/actions/productAction";
+import { actGetAllBrand } from "../../../redux/actions/brandAction";
+
 import "./style.scss";
 import DetailImage from "./DetailImage";
 import DetailLoading from "./DetailLoading";
+import DetailContent from "./DetailContent";
 export default function Detail() {
   const id = useParams();
   const dispatch = useDispatch();
@@ -14,6 +17,7 @@ export default function Detail() {
 
   useEffect(() => {
     dispatch(actGetProductById(id));
+    dispatch(actGetAllBrand());
   }, []);
 
   useEffect(() => {
@@ -30,11 +34,7 @@ export default function Detail() {
               <DetailImage id={id} image={product.image} />
             </div>
             <div className="col-lg-6 detail-content">
-              <div className="p-name">{product.productName}</div>
-              <div>Price: ${product.price}</div>
-              <div>Quantity: {product.quantity}</div>
-              <div>Sold: {product.sold}</div>
-              <div className="btn btn-success">Add to Cart</div>
+              <DetailContent product={product} />
             </div>
           </>
         )}

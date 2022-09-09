@@ -10,6 +10,18 @@ export const ROUTER_PATH = {
   SHOP: {
     path: "/shop",
   },
+  PROFILE: {
+    path: "/profile",
+  },
+  CHANGE_PASSWORD: {
+    path: "/profile/change-password",
+  },
+  CART: {
+    path: "/profile/cart",
+  },
+  ORDER: {
+    path: "/profile/order",
+  },
   LOGIN: {
     path: "/login",
   },
@@ -29,5 +41,8 @@ export const ROUTER_PATH = {
   },
   ORDERS: {
     path: "/admin/orders",
+  },
+  DETAIL_ORDER: {
+    path: "/admin/orders/detail/:id",
   },
 };

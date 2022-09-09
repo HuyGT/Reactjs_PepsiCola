@@ -4,9 +4,12 @@ import "./style.scss";
 import { FaSearch, FaRegHeart, FaOpencart } from "react-icons/fa";
 import { useHistory, generatePath } from "react-router-dom";
 import { ROUTER_PATH } from "../../common/routerLink";
-
+import { useDispatch } from "react-redux";
+import { actAddToCart } from "../../redux/actions/cartAction";
+import { toast } from "react-toastify";
 export default function Product({ product }) {
   const history = useHistory();
+  const dispatch = useDispatch();
 
   const handleClickDetail = (id) => {
     history.push(
@@ -15,8 +18,15 @@ export default function Product({ product }) {
       })
     );
   };
+  const handleAddCart = (product) => {
+    dispatch(actAddToCart({ ...product, cartQuantity: 1 }));
+    toast.success("Add to cart success", {
+      position: "top-center",
+      autoClose: 1000,
+    });
+  };
   return (
-    <div className="card">
+    <div className="card card-product">
       <p>{product?.productName}</p>
       <div className="bg-hover"></div>
       <div className="imgBx">
@@ -30,7 +40,11 @@ export default function Product({ product }) {
           >
             <FaSearch />
           </li>
-          <li>
+          <li
+            onClick={() => {
+              handleAddCart(product);
+            }}
+          >
             <FaOpencart />
           </li>
           <li>

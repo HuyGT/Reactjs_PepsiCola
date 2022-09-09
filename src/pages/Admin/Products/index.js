@@ -71,7 +71,7 @@ export default function Products() {
   ];
   return (
     <>
-      <div className="card">
+      <div className="card-admin">
         <div className="card-body">
           <div className="title">
             <h1>Products</h1>

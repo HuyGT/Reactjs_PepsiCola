@@ -68,7 +68,7 @@ export default function Brands() {
   ];
   return (
     <>
-      <div className="card">
+      <div className="card-admin">
         <div className="card-body">
           <div className="title">
             <h1>Brands</h1>

@@ -68,7 +68,7 @@ export default function Users() {
   ];
   return (
     <>
-      <div className="card">
+      <div className="card-admin">
         <div className="card-body">
           <div className="title">
             <h1>Users</h1>

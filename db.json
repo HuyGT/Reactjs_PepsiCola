@@ -1,11 +1,87 @@
 {
+  "orders": [
+    {
+      "address": "Việt nam",
+      "phone": "0365892505",
+      "payment": "paypal",
+      "email": "admin@gmail.com",
+      "total": 4.8,
+      "status": "CANCELED",
+      "cart": [
+        {
+          "productName": "Pepsi Caffein",
+          "price": "0.7",
+          "quantity": 123123,
+          "brandId": 1,
+          "description": "Pepsi Caffein Pepsi Caffein",
+          "image": "https://www.pepsi.com/en-us/uploads/images/Diet-Pepsi-CaffFree-v2_12oz.png?mtime=20180215173733",
+          "sold": 0,
+          "dateAdd": 1662377553701,
+          "id": 4,
+          "cartQuantity": 4
+        },
+        {
+          "productName": "Pepsi-Cola",
+          "price": "2",
+          "quantity": 100000,
+          "brandId": 1,
+          "description": "Pepsi-Cola Pepsi-Cola",
+          "image": "https://www.pepsi.com/en-us/uploads/images/can-real-sugar-reg.png?mtime=20180110134758",
+          "sold": 0,
+          "dateAdd": 1662431814007,
+          "id": 8,
+          "cartQuantity": 1
+        }
+      ],
+      "id": 1
+    },
+    {
+      "address": "Đà Nẵng",
+      "phone": "123-123-4444",
+      "payment": "visa",
+      "email": "nquanghuy112@gmail.com",
+      "total": 1.49,
+      "status": "SHIPPING",
+      "cart": [
+        {
+          "productName": "Pepsi Cherry",
+          "price": "0.99",
+          "quantity": 5118,
+          "brandId": 1,
+          "description": "Pepsi Cherry Pepsi Cherry",
+          "image": "https://www.pepsi.com/en-us/uploads/images/can-pepsi-cherry-v2.png",
+          "sold": 5,
+          "dateAdd": 1662377514893,
+          "id": 3,
+          "cartQuantity": 1
+        },
+        {
+          "productName": "Pepsi Zero Sugar",
+          "price": "0.5",
+          "quantity": 100000,
+          "brandId": 1,
+          "description": "Pepsi Zero Sugar",
+          "image": "https://www.pepsi.com/en-us/uploads/images/can-pepsi-zero-sugar.png",
+          "sold": 0,
+          "dateAdd": 1662377128994,
+          "id": 1,
+          "cartQuantity": 1
+        }
+      ],
+      "id": 2
+    }
+  ],
   "users": [
     {
       "email": "admin@gmail.com",
       "password": "1",
       "confirmPassword": "1",
       "role": "admin",
-      "id": 1
+      "id": 1,
+      "fullName": "HuyGT",
+      "address": "Việt nam",
+      "phone": "0365892505",
+      "avatar": "https://cdn-icons-png.flaticon.com/512/147/147142.png"
     },
     {
       "email": "nquanghuy112@gmail.com",
@@ -57,46 +133,49 @@
     {
       "productName": "Pepsi Zero Sugar",
       "price": "0.5",
-      "quantity": 100000,
+      "quantity": 99999,
       "brandId": 1,
       "description": "Pepsi Zero Sugar",
       "image": "https://www.pepsi.com/en-us/uploads/images/can-pepsi-zero-sugar.png",
-      "sold": 0,
+      "sold": 1,
       "dateAdd": 1662377128994,
-      "id": 1
+      "id": 1,
+      "cartQuantity": 1
     },
     {
       "productName": "Pepsi Mango",
       "price": "1.99",
-      "quantity": 10000000,
+      "quantity": 9999997,
       "brandId": 1,
       "description": "Pepsi Mango",
       "image": "https://www.pepsi.com/en-us/uploads/images/can-pepsi-mango.png",
-      "sold": 0,
+      "sold": 3,
       "dateAdd": 1662377461925,
       "id": 2
     },
     {
       "productName": "Pepsi Cherry",
       "price": "0.99",
-      "quantity": 5123,
+      "quantity": 5117,
       "brandId": 1,
       "description": "Pepsi Cherry Pepsi Cherry",
       "image": "https://www.pepsi.com/en-us/uploads/images/can-pepsi-cherry-v2.png",
-      "sold": 0,
+      "sold": 6,
       "dateAdd": 1662377514893,
-      "id": 3
+      "id": 3,
+      "cartQuantity": 1
     },
     {
       "productName": "Pepsi Caffein",
       "price": "0.7",
-      "quantity": 123123,
+      "quantity": 123119,
       "brandId": 1,
       "description": "Pepsi Caffein Pepsi Caffein",
       "image": "https://www.pepsi.com/en-us/uploads/images/Diet-Pepsi-CaffFree-v2_12oz.png?mtime=20180215173733",
-      "sold": 0,
+      "sold": 4,
       "dateAdd": 1662377553701,
-      "id": 4
+      "id": 4,
+      "cartQuantity": 4
     },
     {
       "productName": "Coca-Cola Origin",
@@ -134,13 +213,14 @@
     {
       "productName": "Pepsi-Cola",
       "price": "2",
-      "quantity": 100000,
+      "quantity": 99999,
       "brandId": 1,
       "description": "Pepsi-Cola Pepsi-Cola",
       "image": "https://www.pepsi.com/en-us/uploads/images/can-real-sugar-reg.png?mtime=20180110134758",
-      "sold": 0,
+      "sold": 1,
       "dateAdd": 1662431814007,
-      "id": 8
+      "id": 8,
+      "cartQuantity": 1
     }
   ]
 }

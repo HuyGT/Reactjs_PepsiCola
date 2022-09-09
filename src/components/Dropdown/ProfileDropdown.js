@@ -5,14 +5,16 @@ import { CgProfile } from "react-icons/cg";
 import { FiLogOut } from "react-icons/fi";
 import { useDispatch } from "react-redux";
 import { actLogout } from "../../redux/actions/userAction";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { ROUTER_PATH } from "../../common/routerLink";
 
 export default function ProfileDropdown() {
   const profile = useRef();
   const history = useHistory();
+  const dispatch = useDispatch();
   const [active, setActive] = useState(false);
-  const dispatch = useDispatch()
+  const avatar = JSON.parse(localStorage.getItem("Account"))?.avatar;
+
   const handleDropdown = (value) => {
     if (!value) {
       setActive(!active);
@@ -23,19 +25,27 @@ export default function ProfileDropdown() {
     }
   };
   const handleLogout = () => {
-    dispatch(actLogout())
+    dispatch(actLogout());
     history.push(ROUTER_PATH.LOGIN.path);
-  }
+  };
   return (
     <div className="dropdown">
       <div className="profile" onClick={() => handleDropdown(active)}>
-        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"></img>
+        <img
+          src={
+            avatar
+              ? avatar
+              : "https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+          }
+        ></img>
       </div>
       <div className="option" ref={profile}>
-        <div>
-          <CgProfile />
-          Profile
-        </div>
+        <Link to={ROUTER_PATH.PROFILE.path}>
+          <div>
+            <CgProfile />
+            Profile
+          </div>
+        </Link>
         <div onClick={() => handleLogout()}>
           <FiLogOut />
           Log out

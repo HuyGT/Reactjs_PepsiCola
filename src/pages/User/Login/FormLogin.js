@@ -18,7 +18,7 @@ export default function FormLogin() {
   const { listUser } = useSelector((state) => state?.userReducer);
   const handleSubmit = (user) => {
     let valid = false;
-    listUser.forEach((u) => {
+    listUser?.forEach((u) => {
       if (u.email === user.email && u.password === user.password) {
         valid = true;
       }
