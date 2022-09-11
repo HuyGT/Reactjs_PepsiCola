@@ -291,28 +291,22 @@ export const columnsAll = {
   ],
   columnDetailOrder: [
     {
-      title: "STT",
-      dataIndex: "id",
-      key: "id",
-      sorter: (a, b) => a.id - b.id,
-    },
-
-    {
-      title: "Product name",
-      key: "productName",
-      dataIndex: "productName",
-    },
-    {
       title: "Image",
       dataIndex: "image",
       key: "image",
       render: (_, record) => (
         <img
           src={record.image}
-          style={{ width: "100px", height: "100px" }}
+          style={{ width: "60px", height: "80px" }}
         ></img>
       ),
     },
+    {
+      title: "Product name",
+      key: "productName",
+      dataIndex: "productName",
+    },
+   
     {
       title: "Price",
       key: "price",
@@ -322,10 +316,17 @@ export const columnsAll = {
     },
     {
       title: "Quantity",
-      key: "quantity",
-      dataIndex: "quantity",
-      sorter: (a, b) => a.quantity - b.quantity,
+      key: "cartQuantity",
+      dataIndex: "cartQuantity",
     },
+    {
+      title: "Amount",
+      key: "amount",
+      dataIndex: "amount",
+      sorter: (a, b) => a.price - b.price,
+      render: (_, record) => <div>{record.price * record.cartQuantity}$</div>,
+    },
+    
   ],
   columnRat: [
     {

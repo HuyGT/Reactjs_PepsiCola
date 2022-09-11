@@ -19,8 +19,11 @@ export const ROUTER_PATH = {
   CART: {
     path: "/profile/cart",
   },
-  ORDER: {
+  ORDER_USER: {
     path: "/profile/order",
+  },
+  DETAIL_ORDER_USER: {
+    path: "/profile/order/detail/:id",
   },
   LOGIN: {
     path: "/login",

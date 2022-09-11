@@ -1,4 +1,4 @@
-import { Spin, Table } from "antd";
+import { Button, Spin, Table } from "antd";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
@@ -17,7 +17,6 @@ export default function DetailOrder() {
   const { detailOrder, isLoading } = useSelector(
     (state) => state?.orderReducer
   );
-  console.log(isLoading);
   const listCart = detailOrder.cart;
   useEffect(() => {
     dispatch(actGetOrderById(id));
@@ -62,17 +61,13 @@ export default function DetailOrder() {
       {isLoading ? (
         <Spin size="large" className="d-flex justify-content-center" />
       ) : (
-        <div className="container-fluid mt-5">
-          <div className="title">
+        <div className="card-admin">
+          <div className="d-flex justify-content-between align-items-center">
             <h1>Detail Order</h1>
             <p>#{id}</p>
           </div>
           <hr></hr>
-          <div className="row pt-3 pb-3">
-            <div className="col-style">
-              <p>Customer: </p>
-              <h4 className="fw-bold"> {detailOrder?.fullName}</h4>
-            </div>
+          <div className="row pt-3 pb-3" style={{ fontSize: "2rem" }}>
             <p>Invoice Id: #{id}</p>
             <p>Email: {detailOrder?.email}</p>
             <p>Address: {detailOrder?.address}</p>
@@ -114,30 +109,24 @@ export default function DetailOrder() {
             <h1>Total: ${detailOrder.total}</h1>
           </div>
           <hr />
-          <div className=" p-3 text-end">
+          <div className=" p-3 d-flex gap-4 justify-content-end">
             {detailOrder.status === Status.DELIVERED ||
             detailOrder.status === Status.CANCELED ? null : (
               <>
-                <button
-                  className="btn btn-danger mr-5"
-                  onClick={() => handleCancelOrder()}
-                >
+                <Button type="danger" onClick={() => handleCancelOrder()}>
                   Cancel Order
-                </button>
+                </Button>
                 {detailOrder.status !== Status.SHIPPING ? (
-                  <button
-                    className="btn btn-success"
-                    onClick={() => handleAcceptOrder()}
-                  >
+                  <Button type="primary" onClick={() => handleAcceptOrder()}>
                     Accept Order
-                  </button>
+                  </Button>
                 ) : (
-                  <button
-                    className="btn btn-success"
+                  <Button
+                    className="bg-success text-white"
                     onClick={() => handleCompleteOrder()}
                   >
                     Complete Order
-                  </button>
+                  </Button>
                 )}
               </>
             )}

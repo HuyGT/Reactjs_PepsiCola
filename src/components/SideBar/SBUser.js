@@ -47,7 +47,7 @@ export default function SBUser() {
                 Cart
               </li>
             </Link>
-            <Link to={ROUTER_PATH.ORDER.path}>
+            <Link to={ROUTER_PATH.ORDER_USER.path}>
               <li>
                 <RiFileList3Line />
                 Order

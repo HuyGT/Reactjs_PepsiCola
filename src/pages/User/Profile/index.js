@@ -10,7 +10,7 @@ import LayoutProfile from "../../../components/LayoutProfile";
 export default function Profile() {
   const [form] = Form.useForm();
   const dispatch = useDispatch();
-  const id = JSON.parse(localStorage.getItem("Account")).id;
+  const id = JSON.parse(localStorage.getItem("Account"))?.id;
   const { detailUser } = useSelector((state) => state?.userReducer);
 
   const handleEditProfile = async (values) => {

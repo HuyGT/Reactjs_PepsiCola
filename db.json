@@ -41,7 +41,7 @@
       "payment": "visa",
       "email": "nquanghuy112@gmail.com",
       "total": 1.49,
-      "status": "SHIPPING",
+      "status": "DELIVERED",
       "cart": [
         {
           "productName": "Pepsi Cherry",
@@ -69,6 +69,42 @@
         }
       ],
       "id": 2
+    },
+    {
+      "address": "Việt nam",
+      "phone": "11231312",
+      "payment": "visa",
+      "email": "admin@gmail.com",
+      "total": 4.96,
+      "status": "SHIPPING",
+      "cart": [
+        {
+          "productName": "Pepsi Cherry",
+          "price": "0.99",
+          "quantity": 5117,
+          "brandId": 1,
+          "description": "Pepsi Cherry Pepsi Cherry",
+          "image": "https://www.pepsi.com/en-us/uploads/images/can-pepsi-cherry-v2.png",
+          "sold": 6,
+          "dateAdd": 1662377514893,
+          "id": 3,
+          "cartQuantity": 4
+        },
+        {
+          "productName": "Pepsi Zero Sugar",
+          "price": "0.5",
+          "quantity": 99999,
+          "brandId": 1,
+          "description": "Pepsi Zero Sugar",
+          "image": "https://www.pepsi.com/en-us/uploads/images/can-pepsi-zero-sugar.png",
+          "sold": 1,
+          "dateAdd": 1662377128994,
+          "id": 1,
+          "cartQuantity": 2
+        }
+      ],
+      "dateAdd": 1662888021923,
+      "id": 3
     }
   ],
   "users": [
@@ -133,14 +169,14 @@
     {
       "productName": "Pepsi Zero Sugar",
       "price": "0.5",
-      "quantity": 99999,
+      "quantity": 99997,
       "brandId": 1,
       "description": "Pepsi Zero Sugar",
       "image": "https://www.pepsi.com/en-us/uploads/images/can-pepsi-zero-sugar.png",
-      "sold": 1,
+      "sold": 3,
       "dateAdd": 1662377128994,
       "id": 1,
-      "cartQuantity": 1
+      "cartQuantity": 2
     },
     {
       "productName": "Pepsi Mango",
@@ -156,14 +192,14 @@
     {
       "productName": "Pepsi Cherry",
       "price": "0.99",
-      "quantity": 5117,
+      "quantity": 5113,
       "brandId": 1,
       "description": "Pepsi Cherry Pepsi Cherry",
       "image": "https://www.pepsi.com/en-us/uploads/images/can-pepsi-cherry-v2.png",
-      "sold": 6,
+      "sold": 10,
       "dateAdd": 1662377514893,
       "id": 3,
-      "cartQuantity": 1
+      "cartQuantity": 4
     },
     {
       "productName": "Pepsi Caffein",
@@ -200,17 +236,6 @@
       "id": 6
     },
     {
-      "productName": "Monster Energy",
-      "price": "1.5",
-      "quantity": 123123,
-      "brandId": 4,
-      "description": "Monster Energy Monster Energy",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYBDKxM85qJeuK5fatgDi7klIRh_AzuirexGpONgpGWmnsB-ImKHbkvvYIUIuSymyzBpQ&usqp=CAU",
-      "sold": 0,
-      "dateAdd": 1662377876621,
-      "id": 7
-    },
-    {
       "productName": "Pepsi-Cola",
       "price": "2",
       "quantity": 99999,
@@ -221,6 +246,17 @@
       "dateAdd": 1662431814007,
       "id": 8,
       "cartQuantity": 1
+    },
+    {
+      "productName": "Monster Energy",
+      "price": "2",
+      "quantity": 3,
+      "brandId": 4,
+      "description": "Monster Energy Monster Energy",
+      "image": "https://www.pepsi.com/en-us/uploads/images/can-pepsi-zero-sugar-mango.png",
+      "sold": 0,
+      "dateAdd": 1662894769316,
+      "id": 9
     }
   ]
 }

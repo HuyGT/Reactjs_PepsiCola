@@ -43,13 +43,13 @@ export default function Home() {
             <div className="col-xl-7">
               <img src="https://www.pepsi.com/en-us/uploads/images/PZS-headline.png"></img>
               <ul className="list-pepsi">
-                <li onClick={() => handleChangeImage(pepsi1)}>
+                <li onMouseEnter={() => handleChangeImage(pepsi1)}>
                   <img src={pepsi1}></img>
                 </li>
-                <li onClick={() => handleChangeImage(pepsi2)}>
+                <li onMouseEnter={() => handleChangeImage(pepsi2)}>
                   <img src={pepsi2}></img>
                 </li>
-                <li onClick={() => handleChangeImage(pepsi3)}>
+                <li onMouseEnter={() => handleChangeImage(pepsi3)}>
                   <img src={pepsi3}></img>
                 </li>
               </ul>

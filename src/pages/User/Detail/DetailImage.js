@@ -7,37 +7,37 @@ import { useSelector } from "react-redux";
 
 export default function DetailImage({ id, image }) {
   const history = useHistory();
+  const arrPId = [];
   const { listProducts } = useSelector((state) => state?.productReducer);
-  const maxLength = listProducts?.length;
-  const handleRedirectProduct = (value, id) => {
-    let idLeft = parseInt(id.id) - 1;
-    let idRight = parseInt(id.id) + 1;
-    if (idLeft < 1) {
-      idLeft = maxLength;
-    }
-    if (idRight > maxLength) {
-      idRight = 1;
-    }
-    if (value) {
+  listProducts.forEach((p) => {
+    arrPId.push(p.id);
+  });
+  const maxLength = arrPId.length;
+  const index = arrPId.findIndex((e) => e === parseInt(id?.id));
+  let left = index - 1;
+  let right = index + 1;
+  let idLeft = arrPId[left];
+  let idRight = arrPId[right];
+  if (left === -1) {
+    idLeft = arrPId[maxLength - 1];
+  }
+  if (right === maxLength) {
+    idRight = arrPId[0];
+  }
+
+  const handleRedirectProduct = (value) => {
       history.push(
         generatePath(ROUTER_PATH.DETAIL.path, {
-          id: idRight,
+          id: value,
         })
       );
-    } else {
-      history.push(
-        generatePath(ROUTER_PATH.DETAIL.path, {
-          id: idLeft,
-        })
-      );
-    }
   };
   return (
     <>
       <div
         className="icon-left"
         onClick={() => {
-          handleRedirectProduct(false, id);
+          handleRedirectProduct(idLeft);
         }}
       >
         <AiOutlineSwapLeft />
@@ -45,7 +45,7 @@ export default function DetailImage({ id, image }) {
       <div
         className="icon-right"
         onClick={() => {
-          handleRedirectProduct(true, id);
+          handleRedirectProduct(idRight);
         }}
       >
         <AiOutlineSwapRight />

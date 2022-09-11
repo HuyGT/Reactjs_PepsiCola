@@ -14,7 +14,6 @@ export default function Detail() {
   const id = useParams();
   const dispatch = useDispatch();
   const { product, isLoading } = useSelector((state) => state?.productReducer);
-
   useEffect(() => {
     dispatch(actGetProductById(id));
     dispatch(actGetAllBrand());

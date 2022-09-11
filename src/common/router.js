@@ -12,6 +12,9 @@ const ChangePassword = lazy(() =>
 );
 const Cart = lazy(() => import("../pages/User/Cart"));
 const OrderUser = lazy(() => import("../pages/User/OrderUser"));
+const DetailOrderUser = lazy(() =>
+  import("../pages/User/OrderUser/DetailOrder")
+);
 
 //admin
 const Admin = lazy(() => import("../pages/Admin/Dashboard"));
@@ -59,9 +62,14 @@ export const userRouter = [
     component: Cart,
   },
   {
-    path: ROUTER_PATH.ORDER.path,
+    path: ROUTER_PATH.ORDER_USER.path,
     isExact: true,
     component: OrderUser,
+  },
+  {
+    path: ROUTER_PATH.DETAIL_ORDER_USER.path,
+    isExact: true,
+    component: DetailOrderUser,
   },
 ];
 

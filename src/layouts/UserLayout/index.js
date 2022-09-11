@@ -6,8 +6,8 @@ export default function UserLayout({ children }) {
   return (
     <div>
       <main>
-        <HeaderUser/>
-        {children}
+        <HeaderUser />
+        <div className="main-content">{children}</div>
         <Footer />
       </main>
     </div>

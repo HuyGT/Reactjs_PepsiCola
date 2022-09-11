@@ -3,4 +3,7 @@ main {
     width: 100%;
     font-family: 'Poppins', sans-serif;
     margin-top: 90px;
+    .main-content{
+        min-height: 100vh;
+    }
 }

@@ -24,20 +24,22 @@ export default function Shop() {
         {isLoading ? (
           <Spin size="large" className="d-flex justify-content-center" />
         ) : (
-          <div className="row">
-            {listProducts.map((product) => {
-              return (
-                <div className="col-sm-6 col-lg-3 p-0" key={product.id}>
-                  <Product product={product} key={product.id} />
-                </div>
-              );
-            })}
-          </div>
-        )}
-        {listProducts?.length === 0 && (
-          <div className="d-flex justify-content-center">
-            <img src="https://media.istockphoto.com/vectors/error-page-or-file-not-found-icon-vector-id924949200?k=20&m=924949200&s=170667a&w=0&h=-g01ME1udkojlHCZeoa1UnMkWZZppdIFHEKk6wMvxrs="></img>
-          </div>
+          <>
+            {listProducts?.length === 0 && (
+              <div className="d-flex justify-content-center">
+                <img src="https://media.istockphoto.com/vectors/error-page-or-file-not-found-icon-vector-id924949200?k=20&m=924949200&s=170667a&w=0&h=-g01ME1udkojlHCZeoa1UnMkWZZppdIFHEKk6wMvxrs="></img>
+              </div>
+            )}
+            <div className="row">
+              {listProducts.map((product) => {
+                return (
+                  <div className="col-sm-6 col-lg-3 p-0" key={product.id}>
+                    <Product product={product} key={product.id} />
+                  </div>
+                );
+              })}
+            </div>
+          </>
         )}
       </div>
     </>
