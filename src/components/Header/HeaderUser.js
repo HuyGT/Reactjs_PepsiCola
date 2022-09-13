@@ -1,19 +1,21 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/alt-text */
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./style.scss";
 import { ROUTER_PATH } from "../../common/routerLink";
 import ProfileDropdown from "../Dropdown/ProfileDropdown";
-import { AiOutlineShoppingCart } from "react-icons/ai";
+import { AiOutlineClose, AiOutlineShoppingCart } from "react-icons/ai";
+import { BsList } from "react-icons/bs";
+
 import { useDispatch, useSelector } from "react-redux";
 import { actGetCart } from "../../redux/actions/cartAction";
 import { Dropdown, Menu } from "antd";
 export default function HeaderUser() {
   const userLocal = localStorage.getItem("Account") || null;
   const role = JSON.parse(localStorage.getItem("Account"))?.role;
-
+  const [iconMenu, setIconMenu] = useState(false);
   const { cart, cartLength } = useSelector((state) => state?.cartReducer);
   const dispatch = useDispatch();
 
@@ -33,7 +35,14 @@ export default function HeaderUser() {
   });
 
   const menuCart = <Menu items={itemCart} />;
+  const handleToggleMenu = () => {
+    const toggleMenu = document.querySelector(".toggleMenu");
+    const navigation = document.querySelector(".navigation");
 
+    setIconMenu(!iconMenu);
+    toggleMenu.classList.toggle("active");
+    navigation.classList.toggle("active");
+  };
   useEffect(() => {
     dispatch(actGetCart());
   }, []);
@@ -43,7 +52,7 @@ export default function HeaderUser() {
         src="https://www.pepsi.com/en-us/assets/images/logo.44fea4ca40e8a8843bb0fdf07d618439.png"
         className="logo"
       ></img>
-      <ul>
+      <ul className="navigation">
         <Link to={ROUTER_PATH.HOME.path}>
           <li>HOME</li>
         </Link>
@@ -58,6 +67,13 @@ export default function HeaderUser() {
         )}
       </ul>
       <div className="header-end">
+        <div className="toggleMenu" onClick={() => handleToggleMenu()}>
+          {iconMenu ? (
+            <AiOutlineClose style={{ fontSize: "3rem" }} />
+          ) : (
+            <BsList style={{ fontSize: "3rem" }} />
+          )}
+        </div>
         <div className="shopping-cart">
           <Dropdown overlay={menuCart}>
             <Link to={ROUTER_PATH.CART.path}>

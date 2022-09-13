@@ -8,21 +8,21 @@ export default function Footer() {
     <footer>
       <div className="container-xl">
         <div className="row">
-          <div className="col-sm-2">
+          <div className="col-sm-4 col-lg-2">
             <ul>
               <li>CONTACT US</li>
               <li>TERMS </li>
               <li>PRIVACY POLICY</li>
             </ul>
           </div>
-          <div className="col-sm-2">
+          <div className="col-sm-4 col-lg-2">
             <ul>
               <li>COPYRIGHT</li>
               <li>PRODUCT FACTS</li>
               <li>STORE LOCATOR</li>
             </ul>
           </div>
-          <div className="col-sm-2">
+          <div className="col-sm-4 col-lg-2">
             <ul>
               <li>SERVE PEPSI</li>
               <li>ABOUT OUR ADS</li>

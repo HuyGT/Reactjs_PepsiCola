@@ -1,40 +1,42 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Form, Input } from "antd";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { rules } from "../../../common/form";
 import "./style.scss";
 import { FiFacebook } from "react-icons/fi";
 import { SiGmail } from "react-icons/si";
+import { GiCirclingFish } from "react-icons/gi";
+
 import { useDispatch, useSelector } from "react-redux";
-import { toast } from "react-toastify";
 import { actLogin } from "../../../redux/actions/userAction";
 import Confetti from "react-confetti";
 import { useHistory } from "react-router-dom";
 import { ROUTER_PATH } from "../../../common/routerLink";
+import { toast } from "react-toastify";
 
 export default function FormLogin() {
   const [run, setRun] = useState(false);
-  const dispatch = useDispatch();
   const history = useHistory();
-  const { listUser } = useSelector((state) => state?.userReducer);
+  const dispatch = useDispatch();
+  const { login, isLoading, stateLogin } = useSelector(
+    (state) => state?.userReducer
+  );
+  if (login) {
+    setTimeout(() => {
+      history.push(ROUTER_PATH.HOME.path);
+    }, 2000);
+  }
   const handleSubmit = (user) => {
-    let valid = false;
-    listUser?.forEach((u) => {
-      if (u.email === user.email && u.password === user.password) {
-        valid = true;
-      }
-    });
-    if (valid) {
-      dispatch(actLogin({...user}));
-      toast.success("Login success", { autoClose: 1000 });
-      setRun(true);
-      setTimeout(() => {
-        history.push(ROUTER_PATH.HOME.path);
-      }, 2000);
-    } else {
-      toast.error("Account does not exist", { autoClose: 1000 });
-      valid = false;
-    }
+    dispatch(actLogin(user));
   };
+  useEffect(() => {
+    if (login && !isLoading && stateLogin === "success") {
+      toast.success("Login Success", { autoClose: 1000 });
+      setRun(true);
+    } else if (!login && !isLoading && stateLogin === "fail") {
+      toast.warning("Login Fail", { autoClose: 1000 });
+    }
+  }, [isLoading]);
 
   return (
     <div className="form-login">
@@ -53,7 +55,13 @@ export default function FormLogin() {
         >
           <Input.Password placeholder="Enter your password" />
         </Form.Item>
-        <button>Sign In</button>
+        {isLoading ? (
+          <button>
+            <GiCirclingFish className="spin"/>
+          </button>
+        ) : (
+          <button>Sign In</button>
+        )}
         <button className="btn-google" type="button">
           <SiGmail />
           Sign In with Google

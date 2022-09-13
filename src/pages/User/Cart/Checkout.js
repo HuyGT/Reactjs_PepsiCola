@@ -39,7 +39,7 @@ export default function Checkout({ totalCart, cart, setRun }) {
     toast.success("Checkout success", { autoClose: 1000 });
     setRun(true);
     setTimeout(() => {
-      history.push(ROUTER_PATH.ORDER.path);
+      history.push(ROUTER_PATH.ORDER_USER.path);
     }, 3000);
   };
 

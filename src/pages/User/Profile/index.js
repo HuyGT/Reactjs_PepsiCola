@@ -29,7 +29,7 @@ export default function Profile() {
   };
 
   useEffect(() => {
-    dispatch(actGetUserById(id));
+    id && dispatch(actGetUserById(id));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   useEffect(() => {

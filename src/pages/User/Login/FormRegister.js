@@ -1,26 +1,39 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Form, Input } from "antd";
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { rules } from "../../../common/form";
-import { actAddUser, actGetAllUser } from "../../../redux/actions/userAction";
+import { actAddUser } from "../../../redux/actions/userAction";
 import { toast } from "react-toastify";
 import Confetti from "react-confetti";
+import { GiCirclingFish } from "react-icons/gi";
 
 export default function FormRegister() {
   const dispatch = useDispatch();
   const [run, setRun] = useState(false);
   const [form] = Form.useForm();
 
+  const { isLoading, stateRegister, register } = useSelector(
+    (state) => state?.userReducer
+  );
+
   const handleSubmit = (user) => {
-    dispatch(actAddUser({...user,role: "user"}));
-    toast.success("Register success", { autoClose: 1000 });
-    setRun(true);
-    setTimeout(() => {
-      setRun(false);
-    }, 5000);
-    form.resetFields();
-    dispatch(actGetAllUser());
+    dispatch(actAddUser({ ...user, role: "user" }));
   };
+
+  useEffect(() => {
+    if (register && !isLoading && stateRegister === "success") {
+      toast.success("Register Success", { autoClose: 1000 });
+      setRun(true);
+      setTimeout(() => {
+        setRun(false);
+      }, 5000);
+      form.resetFields();
+    } else if (!register && !isLoading && stateRegister === "fail") {
+      toast.warning("Account already exists", { autoClose: 1000 });
+    }
+  }, [isLoading]);
+
   return (
     <div className="form-login">
       {run && <Confetti run={run} />}
@@ -55,7 +68,13 @@ export default function FormRegister() {
         >
           <Input.Password placeholder="Enter your password" />
         </Form.Item>
-        <button>Sign Up</button>
+        {isLoading ? (
+          <button>
+            <GiCirclingFish className="spin" />
+          </button>
+        ) : (
+          <button>Sign Up</button>
+        )}
       </Form>
     </div>
   );

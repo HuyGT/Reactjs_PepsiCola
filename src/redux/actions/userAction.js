@@ -6,8 +6,12 @@ export const actLogin = (user) => ({
 });
 
 export const actLoginSuccess = (user) => ({
-  type: UserTypes.GET_USER_SUCCESS,
+  type: UserTypes.LOGIN_SUCCESS,
   payload: user,
+});
+
+export const actLoginFail = () => ({
+  type: UserTypes.LOGIN_FAIL,
 });
 
 export const actLogout = () => ({
@@ -31,7 +35,9 @@ export const actAddUser = (user) => ({
 export const actAddUserSuccess = () => ({
   type: UserTypes.ADD_USER_SUCCESS,
 });
-
+export const actAddUserFail = () => ({
+  type: UserTypes.ADD_USER_FAIL,
+});
 export const actGetUserById = (id) => ({
   type: UserTypes.GET_USER_BY_ID,
   payload: id,

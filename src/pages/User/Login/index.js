@@ -1,14 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/alt-text */
-import React, { useEffect, useRef, useState } from "react";
-import { useDispatch } from "react-redux";
-import { actGetAllUser } from "../../../redux/actions/userAction";
+import React, { useRef, useState } from "react";
 import FormLogin from "./FormLogin";
 import FormRegister from "./FormRegister";
 
 export default function Login() {
   const [active, setActive] = useState(false);
-  const dispatch = useDispatch();
   const bg = useRef(null);
   const handleRedirectForm = (value) => {
     if (!value) {
@@ -20,9 +17,6 @@ export default function Login() {
     }
   };
 
-  useEffect(() => {
-    dispatch(actGetAllUser());
-  }, []);
   return (
     <div>
       <main>
@@ -39,7 +33,7 @@ export default function Login() {
               </h2>
             </div>
             <div className="col-xl-6 container-form">
-              <FormRegister />
+              <FormRegister/>
               <h2>
                 Already have an account?
                 <p onClick={() => handleRedirectForm(active)}>Sign in now!</p>

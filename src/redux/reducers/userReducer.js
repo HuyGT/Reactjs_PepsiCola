@@ -4,7 +4,10 @@ const initialValue = {
   isLoading: false,
   listUser: [],
   detailUser: {},
-  status: "",
+  login: false,
+  register: false,
+  stateLogin: "",
+  stateRegister: "",
 };
 
 const userReducer = (state = initialValue, action) => {
@@ -16,18 +19,24 @@ const userReducer = (state = initialValue, action) => {
       return { ...state, isLoading: false, detailUser: action.payload };
     }
     case UserTypes.ADD_USER_SUCCESS: {
-      return { isLoading: false };
+      return { isLoading: false, stateRegister: "success", register: true };
+    }
+    case UserTypes.ADD_USER_FAIL: {
+      return { ...state, isLoading: false, stateRegister: "fail" };
     }
     case UserTypes.LOGIN_SUCCESS: {
       localStorage.setItem("Account", JSON.stringify(action.payload));
-      return { isLoading: false };
+      return { isLoading: false, login: true, stateLogin: "success" };
+    }
+    case UserTypes.LOGIN_FAIL: {
+      return { ...state, isLoading: false, stateLogin: "fail" };
     }
     case UserTypes.LOGOUT: {
       localStorage.removeItem("Account");
       return { isLoading: false };
     }
     case UserTypes.SET_LOADING: {
-      return { ...state, isLoading: true };
+      return { ...state, isLoading: true};
     }
     default:
       return state;

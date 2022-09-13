@@ -4,11 +4,11 @@ import { ROUTER_PATH } from "../../common/routerLink";
 import SBUser from "../SideBar/SBUser";
 import "./style.scss";
 export default function LayoutProfile({ title, content }) {
-  const account = JSON.parse(localStorage.getItem("Account"));
+  const role = JSON.parse(localStorage.getItem("Account"))?.role;
   
   return (
     <>
-      {account ? (
+      {role === "admin" || role === "user" ? (
         <div className="container container-profile">
           <div className="row">
             <div className="col-lg-4">

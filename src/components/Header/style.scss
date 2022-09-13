@@ -27,7 +27,7 @@ header {
         transition: 0.3s ease-in-out;
     }
 
-    ul {
+    .navigation {
         position: relative;
         display: flex;
         margin-top: 20px;
@@ -53,6 +53,11 @@ header {
         justify-content: center;
         align-items: center;
         gap: 20px;
+
+        .toggleMenu {
+            display: none;
+            cursor: pointer;
+        }
 
         .shopping-cart {
             position: relative;
@@ -95,6 +100,42 @@ header {
         }
     }
 
+    @media (max-width: 776px) {
+        .logo {
+            z-index: 11;
+        }
+
+        .toggleMenu {
+            display: block !important;
+            z-index: 10;
+        }
+
+        .toggleMenu.active {
+            position: absolute;
+            text-align: end;
+        }
+
+        .navigation {
+            visibility: hidden;
+            opacity: 0;
+            top: 0;
+            left: 0;
+            margin-top: 0;
+            position: fixed;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: var(--color-header);
+            height: 100%;
+            width: 100%;
+            z-index: 10;
+        }
+
+        .navigation.active {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
 }
 
 .header-admin {

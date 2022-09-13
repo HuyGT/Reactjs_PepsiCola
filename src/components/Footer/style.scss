@@ -58,4 +58,9 @@ footer {
             background: #ea4335;
         }
     }
+    @media (max-width: 776px) {
+        ul{
+            align-items: center;
+        }
+    }
 }

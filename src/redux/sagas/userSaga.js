@@ -1,15 +1,20 @@
 import { call, put, takeLatest, takeLeading } from "redux-saga/effects";
 import { addUser, getUserById, getUsers } from "../../apis/userApi";
 import { UserTypes } from "../../common/types";
-import { actSetLoading } from "../actions/userAction";
+import {
+  actAddUserFail,
+  actAddUserSuccess,
+  actGetUserByIdSuccess,
+  actGetUserSuccess,
+  actLoginFail,
+  actLoginSuccess,
+  actSetLoading,
+} from "../actions/userAction";
 function* fetchUsers(action) {
   yield put(actSetLoading());
   try {
     const users = yield call(getUsers);
-    yield put({
-      type: UserTypes.GET_USER_SUCCESS,
-      payload: users,
-    });
+    yield put(actGetUserSuccess(users));
   } catch (e) {
     yield put({ message: e.message });
   }
@@ -18,11 +23,16 @@ function* fetchUsers(action) {
 function* fetchLogin(action) {
   yield put(actSetLoading());
   try {
-    const user = yield call(getUsers,{email: action.payload.email});
-    yield put({
-      type: UserTypes.LOGIN_SUCCESS,
-      payload: user[0],
+    const user = yield call(getUsers, {
+      email: action.payload.email,
+      password: action.payload.password,
     });
+
+    if (user.length > 0) {
+      yield put(actLoginSuccess(user[0]));
+    } else if (user.length <= 0) {
+      yield put(actLoginFail());
+    }
   } catch (e) {
     yield put({ message: e.message });
   }
@@ -31,11 +41,8 @@ function* fetchLogin(action) {
 function* fetchUserByFilter(action) {
   yield put(actSetLoading());
   try {
-    const user = yield call(getUsers, {...action.payload});
-    yield put({
-      type: UserTypes.GET_USER_SUCCESS,
-      payload: user,
-    });
+    const user = yield call(getUsers, { ...action.payload });
+    yield put(actGetUserSuccess(user));
   } catch (e) {
     yield put({ message: e.message });
   }
@@ -45,20 +52,22 @@ function* fetchUserById(action) {
   yield put(actSetLoading());
   try {
     const user = yield call(getUserById, action.payload);
-    yield put({
-      type: UserTypes.GET_USER_BY_ID_SUCCESS,
-      payload: user,
-    });
+    yield put(actGetUserByIdSuccess(user));
   } catch (e) {
     yield put({ message: e.message });
   }
 }
 
-function* createUser(action) {
+function* fetchAddUser(action) {
   yield put(actSetLoading());
   try {
-    yield call(addUser, action.payload);
-    yield put({ type: UserTypes.ADD_USER_SUCCESS });
+    const user = yield call(getUsers, { email: action.payload.email });
+    if (user.length > 0) {
+      yield put(actAddUserFail());
+    } else if (user.length <= 0) {
+      yield call(addUser, action.payload);
+      yield put(actAddUserSuccess());
+    }
   } catch (e) {
     yield put({ message: e.message });
   }
@@ -77,7 +86,7 @@ function* watchUserByFilter() {
 }
 
 function* watchCreateUser() {
-  yield takeLatest(UserTypes.ADD_USER, createUser);
+  yield takeLatest(UserTypes.ADD_USER, fetchAddUser);
 }
 
 function* watchDetailUser() {

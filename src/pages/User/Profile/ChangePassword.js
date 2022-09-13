@@ -9,7 +9,7 @@ import { actGetUserById } from "../../../redux/actions/userAction";
 
 export default function ChangePassword() {
   const [form] = Form.useForm();
-  const id = JSON.parse(localStorage.getItem("Account")).id;
+  const id = JSON.parse(localStorage.getItem("Account"))?.id;
   const dispatch = useDispatch();
   const { detailUser } = useSelector((state) => state?.userReducer);
 
