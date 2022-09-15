@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { FaList } from "react-icons/fa";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { GoMailRead } from "react-icons/go";
@@ -6,20 +6,21 @@ import { GoMailRead } from "react-icons/go";
 import ProfileDropdown from "../Dropdown/ProfileDropdown";
 
 export default function HeaderAdmin() {
-  const [show,setShow] = useState(true)
   const handleToggleSB = () => {
-    setShow(!show)
-    if(show){
-      document.getElementById("sb-admin").style = "margin-left: -200px"
-    }else{
-      document.getElementById("sb-admin").style = "margin-left: 0px"
-    }
-  }
+    document.getElementById("sb-admin").classList.toggle("active");
+    document.querySelector(".btn-toggle").classList.toggle("active");
+  };
   return (
     <div className="header-admin">
-      <button onClick={() => {handleToggleSB()}}>
+      <button
+      className="btn-toggle"
+        onClick={() => {
+          handleToggleSB();
+        }}
+      >
         <FaList />
       </button>
+      <div></div>
       <div className="profile">
         <div className="icon">
           <IoMdNotificationsOutline />

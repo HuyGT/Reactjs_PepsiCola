@@ -61,6 +61,7 @@ export default function TableCart({cart}) {
         dataSource={cart}
         rowKey="id"
         pagination={false}
+        style={{overflowX: "scroll"}}
       />
     </>
   );

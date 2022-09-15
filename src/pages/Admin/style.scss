@@ -23,3 +23,10 @@
     box-shadow: rgba(0, 0, 0, 0.35) 15px 0px 15px;
     padding: 10px;
 }
+
+@media (max-width: 776px) {
+  
+    .ant-table-content {
+      overflow-x: auto;
+    }
+  }

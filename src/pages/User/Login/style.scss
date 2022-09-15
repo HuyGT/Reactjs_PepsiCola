@@ -95,6 +95,10 @@
     }
 }
 
+.bg-form.active {
+    transform: translateX(0);
+}
+
 .container-form {
     display: flex;
     flex-direction: column;
@@ -114,5 +118,17 @@
         p:hover {
             color: var(--color-header);
         }
+    }
+}
+
+@media (max-width: 1200px) {
+    .bg-form {
+        height: 50%;
+        width: 100%;
+        transform: translateX(0);
+        transform: translateY(100%);
+    }
+    .bg-form.active{
+        transform: translateY(0);
     }
 }
