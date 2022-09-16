@@ -16,7 +16,7 @@ export const UserTypes = {
   GET_USER_SUCCESS: "GET_USER_SUCCESS",
   GET_USER_BY_ID_SUCCESS: "GET_USER_BY_ID_SUCCESS",
 
-  SET_LOADING: "SET_LOADING",
+  SET_LOADING: "SET_LOADING_USER",
 };
 
 export const ProductTypes = {

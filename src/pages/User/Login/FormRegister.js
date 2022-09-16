@@ -12,15 +12,18 @@ export default function FormRegister() {
   const dispatch = useDispatch();
   const [run, setRun] = useState(false);
   const [form] = Form.useForm();
-
-  const { isLoading, stateRegister, register } = useSelector(
+  let { isLoading, stateRegister, register } = useSelector(
     (state) => state?.userReducer
   );
-
   const handleSubmit = (user) => {
     dispatch(actAddUser({ ...user, role: "user" }));
   };
 
+  useEffect(() => {
+    isLoading = false;
+    stateRegister = "";
+    register = false;
+  }, []);
   useEffect(() => {
     if (register && !isLoading && stateRegister === "success") {
       toast.success("Register Success", { autoClose: 1000 });

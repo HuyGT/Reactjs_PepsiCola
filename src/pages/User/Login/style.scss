@@ -128,7 +128,14 @@
         transform: translateX(0);
         transform: translateY(100%);
     }
-    .bg-form.active{
+
+    .bg-form.active {
         transform: translateY(0);
+    }
+}
+
+@media (max-width: 570px) {
+    .ant-form-vertical .ant-form-item {
+        flex-direction: row;
     }
 }

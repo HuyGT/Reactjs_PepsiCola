@@ -22,7 +22,7 @@ const userReducer = (state = initialValue, action) => {
       return { isLoading: false, stateRegister: "success", register: true };
     }
     case UserTypes.ADD_USER_FAIL: {
-      return { ...state, isLoading: false, stateRegister: "fail" };
+      return { isLoading: false, stateRegister: "fail", register: false  };
     }
     case UserTypes.LOGIN_SUCCESS: {
       localStorage.setItem("Account", JSON.stringify(action.payload));

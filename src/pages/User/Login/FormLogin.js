@@ -18,9 +18,10 @@ export default function FormLogin() {
   const [run, setRun] = useState(false);
   const history = useHistory();
   const dispatch = useDispatch();
-  const { login, isLoading, stateLogin } = useSelector(
+  let { login, isLoading, stateLogin } = useSelector(
     (state) => state?.userReducer
   );
+  console.log(isLoading);
   if (login) {
     setTimeout(() => {
       history.push(ROUTER_PATH.HOME.path);
@@ -29,6 +30,11 @@ export default function FormLogin() {
   const handleSubmit = (user) => {
     dispatch(actLogin(user));
   };
+  useEffect(() => {
+    isLoading = false;
+    stateLogin = "";
+    login = false;
+  }, []);
   useEffect(() => {
     if (login && !isLoading && stateLogin === "success") {
       toast.success("Login Success", { autoClose: 1000 });
@@ -57,7 +63,7 @@ export default function FormLogin() {
         </Form.Item>
         {isLoading ? (
           <button>
-            <GiCirclingFish className="spin"/>
+            <GiCirclingFish className="spin" />
           </button>
         ) : (
           <button>Sign In</button>
